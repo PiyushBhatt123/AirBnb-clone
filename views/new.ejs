@@ -1,0 +1,53 @@
+<%layout("/layouts/boylerpalate")%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <br>
+    <br>
+  
+    <h3>Create New Listing</h3>
+    <form method="POST"action="/listings" novalidate class="needs-validation"enctype="multipart/form-data">
+        <div class="mb-3">
+          <lable for="title"class="form-lable">Title</lable>
+          <input name="listing[title]" placeholder="Enter a catchy title"type="text"class="form-control" required>
+          <div class="invalid-feedback">pelese fill tis field</div>
+        </div>
+        <div class="mb-3">
+        <lable for="description" class="form-lable">Description</lable>
+        <textarea name="listing[description]"class="form-control"required></textarea>
+         <div class="invalid-feedback">adding a description is necessary</div>
+        </div>
+        <!-- <div class="mb-3">
+            <lable for="image" class="form-lable">image</lable>
+            <input name="listing[image][url]" placeholder="enter link of your emage"type="text"class="form-control"required>
+             <div class="invalid-feedback">please enter a imge adress</div>
+        </div> -->
+        <div class="mb-3">
+            <lable for="image" class="form-lable">image</lable>
+            <input name="listing[image][url]"placeholder="enter your file" type="file"class="form-control"required>
+        
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4">
+        <lable for="price" class="form-lable">Price</lable>
+        <input name="listing[price]" placeholder="1200" class="form-control"required>
+        <div class="invalid-feedback">please enter valide price</div>
+      </div>
+       <div class="mb-3 col-md-8">
+         <lable for="country" class="form-lable">Country</lable>
+         <input name="listing[country]" placeholder="India" type="text" class="form-control"required>
+         <div class="invalid-feedback">please enter a valide countery name</div>
+      </div>
+      </div>
+      <div class="mb-3">
+             <lable for="location" class="form-lable">location</lable>
+             <input name="listing[location]" placeholder="Jaypur,Rajasathan"type="text"class="form-control" required>
+             <div class="invalid-feedback">Enter a valide location</div>
+        </div>
+     <button class="btn btn-dark add-btn">Add</button>
+     <br>
+     <br>
+    </form>
+    </div>
+    </div>
+    </body>

@@ -1,0 +1,56 @@
+<%layout("/layouts/boylerpalate.ejs")%>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h3>sumbbmit your document</h3>
+  <form method="POST"action="/listings/<%=listing._id%>?_method=PUT"
+         novalidate class="needs-validation"
+        enctype="multipart/form-data">
+        <div class="mb-3 mt-3">
+            <label for="title" class="form-label">Title</label>
+           <input name="listing[title]" value="<%=listing.title%>"type="text" class="form-control" required>
+            <div class="invalid-feedback">pelese fill tis field</div>
+        </div>
+        <div class="mb-3">
+         <label for="description" class="form-label">Description</label>
+         <textarea name="listing[description]" cls="50" cols="50" class="form-control" required><%=listing.description%></textarea>
+          <div class="invalid-feedback">adding a discripation is nessecury</div>
+        </div>
+        <div class="mb-3" >
+        <h3>your pervious listing</h3>
+        <img src="<%=listing.image.url%>" style="width: 90px; height: 90px;">
+       </div>
+       <div class="mb-3">
+         <label for="image" class="form-label">image</label>
+         <input
+          name="listing[image][url]"
+          type="file"
+          class="form-control">
+       </div>
+       <div class="row">  
+        <div class="mb-3 col-md-4">
+             <label for="price" class="form-label" required>price</label>
+             <input name="listing[price]" value="<%=listing.price%>" type="number" class="form-control"required>
+              <div class="invalid-feedback">please enter valide price</div>
+         </div>
+     <div class="mb-3 col-md-8">
+      <label for="country" class="form-label" required>Country</label>
+      <input name="listing[country]"value="<%=listing.country%>"type="text" class="form-control"required>
+       <div class="invalide-feedback">please enter vailede countery</div>
+    </div></div>
+       
+    <div class="mb-3">
+            <label for="location" class="form-label">location</label>
+            <input name="listing[location]"value="<%=listing.location%>"type="text"class="form-control"required>
+             <div class="invalid-feedback">please enter a valide Location</div>
+        </div>
+        <div style="width: 300px; height: 150px; background-color: lightblue;">
+  This div has inline sizes.
+</div>
+
+        <button class="btn btn-dark edit-btn mt-3">submit</button>
+    </form>
+    <br><br>
+     </div>
+     </div>
+<script src="/js/script.js"></script>

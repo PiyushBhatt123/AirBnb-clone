@@ -1,0 +1,124 @@
+body{
+    background-color: rgb(38, 39, 49) ; 
+    font-family: "Roboto Condensed", sans-serif !important;
+    display:flex ;
+    flex-direction: column ;
+    min-height:100vh;
+    margin: 0;
+    padding: 0;
+} 
+.container{
+    flex:1 !important;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color:#fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color:#222222 !important;
+}
+.navbar-nav{
+    background-color: white;
+}
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+footer{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+.f-info{
+    text-align: center;
+    height:8rem;
+    background-color: wheat;
+    display:flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:space-evenly; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+ .f-info-links,.f-info-social,.f-info-brand{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-social i{
+    margin-right:1rem;
+    font-size: 1.2rem;
+}
+.listing-card{
+    border:none !important;
+    margin-bottom:2rem ;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit:cover !important;
+}
+.card-body{
+    padding:0 !important;
+
+}
+.card-text p{
+    font-weight: 400px;
+}
+.listing-link{
+    text-decoration: none;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.add-btn{
+    background-color:#fe424d !important;
+}
+.show-img{
+    height: 30vh;
+}
+.show-btn{
+   background-color:#fe424d !important;
+   
+}
+.btns{
+    display: flex !important;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+.try{
+    margin-right: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
