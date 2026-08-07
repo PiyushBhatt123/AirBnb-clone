@@ -1,5 +1,5 @@
 # airbnb-clone
-this is the simple clone of Airbnd  which i maked to test my node and express skill 
+this is the simple clone of Airbnd  which i maked to test my backend skill specilly node and express skill 
 # Airbnb Clone Project
 
 This project is a full-stack web application built with Node.js and Express.js to mimic the core flow of an Airbnb-style listing platform. It was created as a practice project to improve backend development skills, especially around authentication, sessions, file uploads, database modeling, and MVC-style routing.
