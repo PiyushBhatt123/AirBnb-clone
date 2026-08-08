@@ -1,8 +1,6 @@
 if(process.env.NODE_ENV!="production"){
     require("dotenv").config();
 }
-
-
 const express=require("express");
 const app=express();
 const cors = require("cors");
@@ -21,7 +19,7 @@ const{listingSchema,reviewSchema}=require("./schema.js");
 const Review=require("./models/reviews.js");
 const ejsMate=require("ejs-mate");
 app.engine("ejs",ejsMate);
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
 let dbUrl=process.env.ATLASDB_URL
