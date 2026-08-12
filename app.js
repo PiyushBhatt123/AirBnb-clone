@@ -57,7 +57,7 @@ passport.deserializeUser(User.deserializeUser());
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
-
+app.use("/listings/:id/reviews",reviewRouter);
 app.use(express.static(path.join(__dirname,"/public")));
 main().
 then((res)=>{
@@ -80,9 +80,7 @@ app.use((req,res,next)=>{
     next();
 })
 
-// app.get("/",(req,res)=>{
-//     res.send("app is listening at port 8080")
-// });
+
 
 // app.get("/demouser",(req,res,next)=>{
 //     let fakeUser=new User({
@@ -100,6 +98,9 @@ app.use((req,res,next)=>{
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/listings",listingRouter);
 app.use("/",userRouter);
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+});
 
 // DELETE ROUTE
 
