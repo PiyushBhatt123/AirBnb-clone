@@ -1,17 +1,12 @@
 const express=require("express");
 const router = express.Router();
-const app = express();
 const wrapAsync = require("../utils/wrapAsync.js");
 const Listing = require("../models/listing.js");
-const{isLoggedIn,isOwner,validateListing}=require("../middlweare.js");
-const ExpressError=require("../utils/expressError");
+const{isLoggedIn,isOwner,validateListing}=require("../middleware.js");
 const listingController=require("../controllers/listings.js");
 const multer = require('multer')
 const {storage}=require("../cloudConfig.js")
 const upload = multer({storage})
-const methodOverride=require("method-override");
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
 
 // router.get("/",(req,res)=>{
 //     res.send("hello app is working");

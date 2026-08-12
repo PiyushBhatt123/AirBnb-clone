@@ -65,7 +65,7 @@ uploads/               # Uploaded files directory
 utils/                 # Helper utilities
 schema.js              # Joi validation schemas
 cloudConfig.js         # Cloudinary configuration
-middlweare.js          # Authentication and validation middleware
+middleware.js          # Authentication and validation middleware
 ```
 
 ## Prerequisites

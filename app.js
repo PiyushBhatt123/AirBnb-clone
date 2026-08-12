@@ -1,12 +1,12 @@
 if(process.env.NODE_ENV!="production"){
     require("dotenv").config();
 }
+const port=process.env.PORT||8080;
 const express=require("express");
 const app=express();
 const cors = require("cors");
 const path=require("path");
 const mongoose=require("mongoose");
-const wrapAsync=require("./utils/wrapAsync.js");
 const methodOverride=require("method-override");
 const session=require("express-session");
 const flash=require("connect-flash");
@@ -15,8 +15,6 @@ const LocalStrategy=require("passport-local");
 const User=require("./models/user.js");
 const mongoStore=require("connect-mongo").default;
 app.use(methodOverride("_method"));
-const{listingSchema,reviewSchema}=require("./schema.js");
-const Review=require("./models/reviews.js");
 const ejsMate=require("ejs-mate");
 app.engine("ejs",ejsMate);
 app.use(express.urlencoded({extended: true}));
@@ -32,8 +30,8 @@ const store=mongoStore.create({
     },
     touchAfter:24*3600,
 })
-store.on("error",()=>{
-    console.log("error in mongo session store",err);
+store.on("error",(err)=>{
+    console.error("error in mongo session store",err);
 })
 const sessionOptions={
     store,
@@ -59,8 +57,6 @@ passport.deserializeUser(User.deserializeUser());
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
-const Listing = require("./models/listing.js");
-
 
 app.use(express.static(path.join(__dirname,"/public")));
 main().
@@ -115,8 +111,8 @@ app.use("/",userRouter);
 //   req.flash("error",message);
 //   res.redirect("/listings");
 // })
-app.listen("8080",()=>{
-  console.log("app is listneanig at port 8080");
+app.listen(port,()=>{
+  console.log(`app is listening on port ${port}`);
 });
 
 

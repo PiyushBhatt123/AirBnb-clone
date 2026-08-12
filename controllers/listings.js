@@ -56,7 +56,7 @@ module.exports.updateListings=async(req,res)=>{
     await listing.save();
     }
     
-    req.flash("sucess","listing update")
+    req.flash("success","listing updated")
     res.redirect(`/listings/${id}`);
 }
 module.exports.destroyListings=async (req,res)=>{
